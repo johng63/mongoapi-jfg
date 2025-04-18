@@ -1,0 +1,60 @@
+db.createCollection("Users");
+db.createCollection("Relationships");
+db.createCollection("Group");
+db.createCollection("PhoneNumber");
+
+
+db.Users.insertMany([
+  { docid: 1, firstname: "John", lastname: "Doe", username: "jdoe" },
+  { docid: 2, firstname: "Jane", lastname: "Smith", username: "jsmith" },
+  { docid: 3, firstname: "Alice", lastname: "Johnson", username: "ajohnson" },
+  { docid: 4, firstname: "Bob", lastname: "Brown", username: "bbrown" },
+  { docid: 5, firstname: "Charlie", lastname: "Davis", username: "cdavis" },
+  { docid: 6, firstname: "Emily", lastname: "Clark", username: "eclark" },
+  { docid: 7, firstname: "Frank", lastname: "Miller", username: "fmiller" },
+  { docid: 8, firstname: "Grace", lastname: "Wilson", username: "gwilson" },
+  { docid: 9, firstname: "Henry", lastname: "Moore", username: "hmoore" },
+  { docid: 10, firstname: "Ivy", lastname: "Taylor", username: "itaylor" }
+]);
+
+db.PhoneNumber.insertMany([
+  { docid: 11, phonenumber: "1234567890" },
+  { docid: 12, phonenumber: "2345678901" },
+  { docid: 13, phonenumber: "3456789012" },
+  { docid: 14, phonenumber: "4567890123" },
+  { docid: 15, phonenumber: "5678901234" },
+  { docid: 16, phonenumber: "6789012345" },
+  { docid: 17, phonenumber: "7890123456" },
+  { docid: 18, phonenumber: "8901234567" },
+  { docid: 19, phonenumber: "9012345678" },
+  { docid: 20, phonenumber: "0123456789" }
+]);
+
+
+db.Group.insertMany([
+  { docid: 21, groupname: "Admin" },
+  { docid: 22, groupname: "User" }
+]);
+
+db.Relationships.insertMany([
+  { docid: 31, fromid: 1, toid: 11 }, // User 1 linked to PhoneNumber 11
+  { docid: 32, fromid: 1, toid: 21 }, // User 1 linked to Group Admin
+  { docid: 33, fromid: 2, toid: 12 }, // User 2 linked to PhoneNumber 12
+  { docid: 34, fromid: 2, toid: 22 }, // User 2 linked to Group User
+  { docid: 35, fromid: 3, toid: 13 }, // User 3 linked to PhoneNumber 13
+  { docid: 36, fromid: 3, toid: 22 }, // User 3 linked to Group User
+  { docid: 37, fromid: 4, toid: 14 }, // User 4 linked to PhoneNumber 14
+  { docid: 38, fromid: 4, toid: 22 }, // User 4 linked to Group User
+  { docid: 39, fromid: 5, toid: 15 }, // User 5 linked to PhoneNumber 15
+  { docid: 40, fromid: 5, toid: 21 }, // User 5 linked to Group Admin
+  { docid: 41, fromid: 6, toid: 16 }, // User 6 linked to PhoneNumber 16
+  { docid: 42, fromid: 6, toid: 22 }, // User 6 linked to Group User
+  { docid: 43, fromid: 7, toid: 17 }, // User 7 linked to PhoneNumber 17
+  { docid: 44, fromid: 7, toid: 22 }, // User 7 linked to Group User
+  { docid: 45, fromid: 8, toid: 18 }, // User 8 linked to PhoneNumber 18
+  { docid: 46, fromid: 8, toid: 22 }, // User 8 linked to Group User
+  { docid: 47, fromid: 9, toid: 19 }, // User 9 linked to PhoneNumber 19
+  { docid: 48, fromid: 9, toid: 22 }, // User 9 linked to Group User
+  { docid: 49, fromid: 10, toid: 20 }, // User 10 linked to PhoneNumber 20
+  { docid: 50, fromid: 10, toid: 21 }  // User 10 linked to Group Admin
+]);

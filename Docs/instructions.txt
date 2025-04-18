@@ -1,0 +1,13 @@
+Using mongosh create 3 collections.
+1. Users
+2. Relationships
+3. Group
+4. PhoneNumber
+
+using mongosh create 10 test documents in collection users, the documents will have firstname, lastname, username with first initial and lastname.
+The users will have a phone number stored in PhoneNumber collection.
+The users will have a Group of Admin or User stored in Gruop collection.
+The Groups and Phone numbers are stored in the respective collections.
+Every document in each collection has a unique docid unique to all collections.
+The relationships collection stores the relationship of the PhoneNumbers ang Groups in documents with toid and fromid.
+fromid is the docid from the user and the toid is the id of PhoneNumber or Group
